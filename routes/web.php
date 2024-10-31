@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PokemonController;
+use App\Models\Pokemon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+// rotta che utilizza il metodo index attraverso la classe PokemonController
+Route::get('/', [PokemonController::class, 'index'])->name('pages.index');
+Route::get('/pokemon/create', [PokemonController::class, 'create'])->name('pages.create');
+Route::get('/pokemon/{id}', [PokemonController::class, 'show'])->name('pages.show');
+Route::post('/', [PokemonController::class, 'store'])->name('pages.store');

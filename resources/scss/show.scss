@@ -1,0 +1,12 @@
+body {
+    background-color: aqua !important;
+}
+
+.card {
+    box-shadow: 1px 1px 10px rgb(173, 173, 173);
+
+    &:hover {
+        scale: 1.1;
+        cursor: pointer;
+    }
+}
