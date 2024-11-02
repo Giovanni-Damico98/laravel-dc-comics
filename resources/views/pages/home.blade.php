@@ -39,7 +39,8 @@
                                 {{-- SHOW --}}
                                 <td><a href="{{ route('pages.show', $pokemonItem['id']) }}" class="btn btn-primary">Mostra</a>
                                     {{-- EDIT --}}
-                                    <a href="#" class="btn btn-warning mx-2">Modifica</a>
+                                    <a href="{{ route('pages.edit', $pokemonItem['id']) }}"
+                                        class="btn btn-warning mx-2">Modifica</a>
                                     {{-- DELETE --}}
                                     <a href="#" class="btn btn-danger">Elimina</a>
                                 </td>

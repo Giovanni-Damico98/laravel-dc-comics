@@ -58,7 +58,9 @@ class PokemonController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pokemon = Pokemon::findOrFail($id);
+
+        return view('pages.edit', compact('pokemon'));
     }
 
     /**
@@ -66,7 +68,14 @@ class PokemonController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $pokemon = Pokemon::findOrFail($id);
+        $pokemon->nome = $data['nome'];
+        $pokemon->specie = $data['specie'];
+        $pokemon->abilita = $data['abilita'];
+        $pokemon->elemento = $data['elemento'];
+        $pokemon->update();
+        return redirect()->route('pages.show', $pokemon->id);
     }
 
     /**
