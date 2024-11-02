@@ -83,6 +83,8 @@ class PokemonController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pokemon = Pokemon::findOrFail($id);
+        $pokemon->delete();
+        return redirect()->route('pages.index');
     }
 }

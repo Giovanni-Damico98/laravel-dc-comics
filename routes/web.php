@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PokemonController::class, 'index'])->name('pages.index');
 Route::get('/pokemon/create', [PokemonController::class, 'create'])->name('pages.create');
 Route::get('/pokemon/{id}', [PokemonController::class, 'show'])->name('pages.show');
-Route::post('/', [PokemonController::class, 'store'])->name('pages.store');
 Route::get('/pokemon/{id}/edit', [PokemonController::class, 'edit'])->name('pages.edit');
+Route::post('/', [PokemonController::class, 'store'])->name('pages.store');
 Route::put('/pokemon/{id}', [PokemonController::class, 'update'])->name('pages.update');
+Route::delete('/pokemon/{id}', [PokemonController::class, 'destroy'])->name('pages.delete');

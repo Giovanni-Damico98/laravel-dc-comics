@@ -42,7 +42,12 @@
                                     <a href="{{ route('pages.edit', $pokemonItem['id']) }}"
                                         class="btn btn-warning mx-2">Modifica</a>
                                     {{-- DELETE --}}
-                                    <a href="#" class="btn btn-danger">Elimina</a>
+                                    <form class="d-inline" action="{{ route('pages.delete', $pokemonItem['id']) }}"
+                                        method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type='submit' class="btn btn-danger">Elimina</a>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
