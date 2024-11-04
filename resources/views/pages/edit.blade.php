@@ -17,22 +17,43 @@
 
             <div class="mb-3">
                 <label for="pokemon-nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="pokemon-nome" name="nome" value="{{ $pokemon->nome }}">
+                <input type="text" class="form-control" id="pokemon-nome" name="nome"
+                    value="{{ old('nome', $pokemon->nome) }}">
+                @error('nome')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-specie" class="form-label">Specie</label>
                 <input type="text" class="form-control" id="pokemon-specie" name="specie"
-                    value="{{ $pokemon->specie }}">
+                    value="{{ old('specie', $pokemon->specie) }}">
+                @error('specie')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-abilita" class="form-label">Abilità</label>
                 <input type="text" class="form-control" id="pokemon-abilita" name="abilita"
-                    value="{{ $pokemon->abilita }}">
+                    value="{{ old('abilita', $pokemon->abilita) }}">
+                @error('abilita')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-elemento" class="form-label">Elemento</label>
                 <input type="text" class="form-control" id="pokemon-elemento" name="elemento"
-                    value="{{ $pokemon->elemento }}">
+                    value="{{ old('elemento', $pokemon->elemento) }}">
+                @error('elemento')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="d-flex  justify-center align-items-center">
                 <button type="submit" class="btn btn-primary mx-3">

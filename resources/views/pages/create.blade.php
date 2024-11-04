@@ -16,19 +16,40 @@
 
             <div class="mb-3">
                 <label for="pokemon-nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="pokemon-nome" name="nome">
+                <input type="text" class="form-control" id="pokemon-nome" name="nome" value={{ old('nome') }}>
+                @error('nome')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-specie" class="form-label">Specie</label>
-                <input type="text" class="form-control" id="pokemon-specie" name="specie">
+                <input type="text" class="form-control" id="pokemon-specie" name="specie" value={{ old('specie') }}>
+                @error('specie')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-abilita" class="form-label">Abilità</label>
-                <input type="text" class="form-control" id="pokemon-abilita" name="abilita">
+                <input type="text" class="form-control" id="pokemon-abilita" name="abilita" value={{ old('abilita') }}>
+                @error('abilita')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="pokemon-elemento" class="form-label">Elemento</label>
-                <input type="text" class="form-control" id="pokemon-elemento" name="elemento">
+                <input type="text" class="form-control" id="pokemon-elemento" name="elemento"
+                    value={{ old('elemento') }}>
+                @error('elemento')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="d-flex  justify-center align-items-center">
                 <button type="submit" class="btn btn-primary mx-3">
